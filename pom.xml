@@ -12,6 +12,7 @@
     <module>failsafe</module>
     <module>categories</module>
     <module>common</module>
+    <module>jbehave</module>
   </modules>
 
   <properties>

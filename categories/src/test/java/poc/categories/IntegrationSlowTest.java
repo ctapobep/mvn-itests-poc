@@ -1,6 +1,7 @@
-package poc;
+package poc.categories;
 
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -10,7 +11,8 @@ import static junit.framework.Assert.assertEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:/test-context.xml")
-public class IntegrationIT {
+@Category(IntegrationTest.class)
+public class IntegrationSlowTest {
     @Test
     public void integrationTest() {
         assertEquals("If you want integration tests to pass, use '-DintegrationTestResults=pass'",
