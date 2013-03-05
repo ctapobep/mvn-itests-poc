@@ -20,11 +20,6 @@
     </dependency>
     <dependency>
       <groupId>org.jbehave</groupId>
-      <artifactId>jbehave-spring</artifactId>
-      <version>${jbehave.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jbehave</groupId>
       <artifactId>jbehave-maven-plugin</artifactId>
       <version>${jbehave.version}</version>
     </dependency>
@@ -37,21 +32,11 @@
         <artifactId>jbehave-maven-plugin</artifactId>
         <version>${jbehave.version}</version>
         <configuration>
-          <embedderClass>com.kohls.es.ordersgrid.integration.OrderGridEmbedder</embedderClass>
+          <scope>test</scope>
           <includes>
-            <include>**/*.story</include>
+            <include>**/*Story.java</include>
           </includes>
-          <skip>${skipJbehaveTests}</skip>
-          <sourceDirectory>${project.basedir}/src/main/resources</sourceDirectory>
         </configuration>
-        <executions>
-          <execution>
-            <phase>integration-test</phase>
-            <goals>
-              <goal>run-stories-as-paths</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>

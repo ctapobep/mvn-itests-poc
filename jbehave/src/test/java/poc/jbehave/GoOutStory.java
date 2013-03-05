@@ -14,13 +14,12 @@ public class GoOutStory extends JUnitStory {
     @Override
     public Configuration configuration() {
         return new MostUsefulConfiguration()
-                .useStoryLoader(new LoadFromClasspath(this.getClass()))
-                .useStoryReporterBuilder(new StoryReporterBuilder().withDefaultFormats().withFormats(Format.CONSOLE, Format.TXT));
+            .useStoryLoader(new LoadFromClasspath(this.getClass().getClassLoader()))
+            .useStoryReporterBuilder(new StoryReporterBuilder().withDefaultFormats().withFormats(Format.CONSOLE, Format.TXT));
     }
 
     @Override
     public InjectableStepsFactory stepsFactory() {
-        // varargs, can have more that one steps classes
         return new InstanceStepsFactory(configuration(), new GoOutSteps());
     }
 }
