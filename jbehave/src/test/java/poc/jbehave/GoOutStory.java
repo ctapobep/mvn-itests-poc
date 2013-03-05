@@ -9,13 +9,18 @@ import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
 
+/**
+ * Is triggered by test phase when jbehave-test profile is activated.
+ *
+ * @author stanislav bashkirtsev
+ */
 public class GoOutStory extends JUnitStory {
 
     @Override
     public Configuration configuration() {
         return new MostUsefulConfiguration()
-            .useStoryLoader(new LoadFromClasspath(this.getClass().getClassLoader()))
-            .useStoryReporterBuilder(new StoryReporterBuilder().withDefaultFormats().withFormats(Format.CONSOLE, Format.TXT));
+                .useStoryLoader(new LoadFromClasspath(this.getClass().getClassLoader()))
+                .useStoryReporterBuilder(new StoryReporterBuilder().withDefaultFormats().withFormats(Format.CONSOLE, Format.TXT));
     }
 
     @Override

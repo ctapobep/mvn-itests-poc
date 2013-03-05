@@ -24,20 +24,41 @@
       <version>${jbehave.version}</version>
     </dependency>
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.jbehave</groupId>
-        <artifactId>jbehave-maven-plugin</artifactId>
-        <version>${jbehave.version}</version>
-        <configuration>
-          <scope>test</scope>
-          <includes>
-            <include>**/*Story.java</include>
-          </includes>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+  <profiles>
+    <profile>
+      <id>jbehave-test</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.jbehave</groupId>
+            <artifactId>jbehave-maven-plugin</artifactId>
+            <version>${jbehave.version}</version>
+            <configuration>
+              <scope>test</scope>
+              <includes>
+                <include>**/*Story.java</include>
+              </includes>
+            </configuration>
+            <executions>
+              <execution>
+                <phase>test</phase>
+                <goals>
+                  <goal>run-stories-as-embeddables</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <excludes>
+                <!--we don't want to start unit tests while jbehave is working-->
+                <exclude>**/*Test.java</exclude>
+              </excludes>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
