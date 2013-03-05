@@ -11,6 +11,6 @@ public class UnitTest {
 
     @Test
     public void unitTest(){
-
+        System.out.println("*************************UNIT TEST IS RUNNING*************************");
     }
 }

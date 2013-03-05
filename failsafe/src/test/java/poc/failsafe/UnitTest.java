@@ -14,6 +14,7 @@ public class UnitTest {
 
     @Test
     public void junitTestShouldFail() throws Exception {
+        System.out.println("*************************UNIT TEST IS RUNNING*************************");
         assertEquals(
                 "If you want them to pass, then '-DunitTestResult=pass' while running unit tests",
                 "pass", unitTestResult);

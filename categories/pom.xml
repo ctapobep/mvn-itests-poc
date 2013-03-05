@@ -18,6 +18,19 @@
     </dependency>
   </dependencies>
 
+  <!--I didn't finish categories because it showed itself bad. Too many profile should be configured for them, it's not worth it-->
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <exclude>**/*.*</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
   <profiles>
     <profile>
       <id>unit-test</id>

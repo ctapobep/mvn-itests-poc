@@ -1,5 +1,6 @@
 package poc.categories;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
@@ -12,6 +13,7 @@ import static junit.framework.Assert.assertEquals;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:/test-context.xml")
 @Category(IntegrationTest.class)
+@Ignore("stopped working on categories, not worth it")
 public class IntegrationSlowTest {
     @Test
     public void integrationTest() {

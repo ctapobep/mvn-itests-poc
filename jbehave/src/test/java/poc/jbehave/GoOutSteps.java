@@ -22,6 +22,7 @@ public class GoOutSteps {
 
     @Then("I $action")
     public void iDo(String action) {
+        System.out.println("*************************JBEHAVE TEST IS RUNNING*************************");
         boolean expectedGoOut = action.equalsIgnoreCase("go biking");
         assertEquals(expectedGoOut, sut.ridingBicycle(weatherState));
     }

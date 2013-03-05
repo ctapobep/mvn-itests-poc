@@ -13,6 +13,7 @@ import static junit.framework.Assert.assertEquals;
 public class IntegrationIT {
     @Test
     public void integrationTest() {
+        System.out.println("*************************INTEGRATION TEST IS RUNNING*************************");
         assertEquals("If you want integration tests to pass, use '-DintegrationTestResults=pass'",
                 integrationTestResult, "pass");
     }
