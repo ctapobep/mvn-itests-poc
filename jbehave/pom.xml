@@ -51,10 +51,7 @@
           <plugin>
             <artifactId>maven-surefire-plugin</artifactId>
             <configuration>
-              <excludes>
-                <!--we don't want to start unit tests while jbehave is working-->
-                <exclude>**/*Test.java</exclude>
-              </excludes>
+              <skip>true</skip>
             </configuration>
           </plugin>
         </plugins>
